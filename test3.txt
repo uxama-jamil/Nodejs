@@ -1,2 +1,6 @@
+<<<<<<< Updated upstream
 test3 3
 sasda
+=======
+test3 3
+>>>>>>> Stashed changes
