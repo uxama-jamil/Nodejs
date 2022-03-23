@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        .data{
+            border: 2px solid black;
+            display: inline-block;
+            padding :10px;
+            margin-top: 5px;
+            list-style: none;
+        }
+        </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/getProducts">Home</a>
+        <a href="/addProduct">Add</a>
+        <!-- <a href="#contact">Contact</a>
+        <a href="#about">About</a> -->
+      </div>
+      <% if(!form) {%>
+      <% if(products.length>0){%>
+        <% products.forEach( prod=>{ %>
+            <ul class="data">
+                <li><%= prod.name %></li>
+                <li><%= prod.price %></li>
+                <li><%= prod.description %></li>
+                
+            </ul>
+        
+        <%}) %>
+
+        <% } else{%>
+            no records found
+            <% } %>
+            <% } else{ %>
+            <form method="post" action="/addProduct">
+                <label>
+                    name:
+                    <input type="text" name="name"/>
+                </label><br/>
+                <label>
+                    price:
+                    <input type="number" name="price"/>
+                </label><br/>
+                <label>
+                    description:
+                    <input type="text" name="description"/>
+                </label><br/>
+                <label>
+                  Mac Address:
+                  <input type="text" name="address"/>
+              </label><br/>
+              <label>
+                PTA Approve:
+                <input type="text" name="PTA" />
+            </label><br/>
+                <button type="submit">Add</button>
+        
+            </form>
+            <% } %>
+
+    
+</body>
+</html>
