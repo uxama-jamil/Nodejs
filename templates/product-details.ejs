@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/product/add-product">Add product</a>
+    <a href="/product/delete-products">Delete all Products</a>
+    <% if(arr.length>0) { %>
+        <% for(let ar of arr) {%>
+            <h1><%= ar.name %> </h1>
+            <h2><%= ar.price %> </h2><br/>
+            <a style="border: 2px black solid" href="/product/get-product-by-id/<%= ar.id %>">view</a><br/>
+             
+            <a style="border: 2px black solid" href="/product/edit-product/<%= ar.id %>">edit</a><br/>
+            
+            <a style="border: 2px black solid" href="/product/delete-product-by-id/<%= ar.id %>">Delete</a>
+            <% } %>
+        <% } else { %>
+            <h1>no record found!!!!</h1>
+            <% } %>
+    
+</body>
+</html>
